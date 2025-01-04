@@ -205,15 +205,17 @@ mc mb kayvan/play
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/17.webp?raw=true)
 
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/18.webp?raw=true)
+
 ```
 mc od if=b.mp3 of=kayvan/play/moein/baroon.mp3 size=5MiB parts=3
 ```
 
 The mc od command copies a local file to a remote location in a specified number of parts and part sizes :
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/18.webp?raw=true)
-
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/19.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/20.webp?raw=true)
 
 ```
 mc get kayvan/play/moein/baroon.mp3 .
@@ -221,33 +223,33 @@ mc get kayvan/play/moein/baroon.mp3 .
 
 The mc get command downloads an object from a target S3 deployment to the local file system.
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/20.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/21.webp?raw=true)
 
 ```
 mc mv  b.mp3  kayvan/play/moein/2025/namaz.mp3
 ```
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/21.webp?raw=true)
-
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/22.webp?raw=true)
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/23.webp?raw=true)
 
-
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/24.webp?raw=true)
+
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/25.webp?raw=true)
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/26.webp?raw=true)
 
-
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/27.webp?raw=true)
+
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/28.webp?raw=true)
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/29.webp?raw=true)
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/30.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/31.webp?raw=true)
 
 Thanks for your attention to this article. 🍹
 
