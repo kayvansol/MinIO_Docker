@@ -150,7 +150,7 @@ Docs: https://docs.min.io
 
 5) Connect to the MinIO Service
 
-MinIO Web Console :
+. MinIO Web Console :
 
 You can access the MinIO Web Console by entering http://192.168.56.156:9001 in your preferred browser. Any traffic to the MinIO Console port on the local host redirects to the container.
 
@@ -164,7 +164,7 @@ Log in with the MINIO_ROOT_USER and MINIO_ROOT_PASSWORD configured in the enviro
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/10.webp?raw=true)
 
-MinIO CLI (mc) :
+. MinIO CLI (mc) :
 
 You can access the MinIO deployment over a Terminal or Shell using the MinIO Client (mc). See MinIO Client Installation Quickstart for instructions on installing mc.
 
