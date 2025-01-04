@@ -2,7 +2,7 @@
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/1.webp?raw=true)
 
-MinIO is an object storage system released under GNU Affero General Public License, It is API compatible with the Amazon S3 cloud storage service. It is capable of working with unstructured data such as photos, videos, log files, backups, and container images with the maximum supported object size being 50TB.
+`MinIO` is an object storage system released under GNU Affero General Public License, It is API compatible with the Amazon S3 cloud storage service. It is capable of working with unstructured data such as photos, videos, log files, backups, and container images with the maximum supported object size being 50TB.
 
 The procedures on this page cover deploying MinIO in a Single-Node Multi-Drive (SNMD) configuration. SNMD deployments provide drive-level reliability and failover/recovery with performance and scaling limitations imposed by the single node.
 
@@ -11,6 +11,7 @@ For production environments, MinIO strongly recommends using the MinIO Kubernete
 <hr />
 
 Storage Requirements
+
 The following requirements summarize the Storage section of MinIO’s hardware recommendations :
 
 Use Local Storage
@@ -40,6 +41,7 @@ Use /etc/fstab to ensure consistent drive-to-mount mapping across node reboots.
 <hr />
 
 Deploy Single-Node Multi-Drive MinIO
+
 The following procedure deploys MinIO consisting of a single MinIO server and a multiple drives or storage volumes.
 
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/2.webp?raw=true)
@@ -52,6 +54,7 @@ docker pull quay.io/minio/minio
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/3.webp?raw=true)
 
 2) Create the Environment Variable File
+
 Create an environment variable file at /etc/default/minio.The MinIO Server container can use this file as the source of all environment variables.
 
 The following example provides a starting environment file:
