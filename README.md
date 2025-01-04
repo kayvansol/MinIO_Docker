@@ -49,7 +49,7 @@ The following procedure deploys MinIO consisting of a single MinIO server and a 
 docker pull quay.io/minio/minio
 ```
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/3.webp?raw=true)
 
 2) Create the Environment Variable File
 Create an environment variable file at /etc/default/minio.The MinIO Server container can use this file as the source of all environment variables.
@@ -83,7 +83,7 @@ mkdir /mnt/disk3
 mkdir /mnt/disk4
 ```
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/4.webp?raw=true)
 
 3) Create and Run the Container
 ```
@@ -98,14 +98,14 @@ docker run -dt                                  \
   --name "minio_local"                          \
   quay.io/minio/minio server --console-address ":9001"
 ```
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/5.webp?raw=true)
 
 4) Validate the Container Status
 ```
 docker logs minio_local
 ```
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/6.webp?raw=true)
 
 The command should return output similar to the following:
 ```
@@ -156,13 +156,13 @@ You can access the MinIO Web Console by entering http://192.168.56.156:9001 in y
 
 Log in with the MINIO_ROOT_USER and MINIO_ROOT_PASSWORD configured in the environment file specified to the container.
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/7.webp?raw=true)
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/8.webp?raw=true)
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/9.webp?raw=true)
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/10.webp?raw=true)
 
 MinIO CLI (mc) :
 
@@ -176,34 +176,34 @@ mc alias set kayvan http://192.168.56.156:9000 myminioadmin minio-secret-key-cha
 
 or via access key :
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/11.webp?raw=true)
 
 ```
 mc alias set kayvan http://192.168.56.156:9000
 ```
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/12.webp?raw=true)
 
 ```
 mc alias ls
 ```
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/13.webp?raw=true)
 
 You can then interact with the container using any mc command :
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/14.webp?raw=true)
 
 make a bucket named play to store your objects in it :
 ```
 mc mb kayvan/play
 ```
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/15.webp?raw=true)
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/16.webp?raw=true)
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/17.webp?raw=true)
 
 ```
 mc od if=b.mp3 of=kayvan/play/moein/baroon.mp3 size=5MiB parts=3
@@ -211,9 +211,9 @@ mc od if=b.mp3 of=kayvan/play/moein/baroon.mp3 size=5MiB parts=3
 
 The mc od command copies a local file to a remote location in a specified number of parts and part sizes :
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/18.webp?raw=true)
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/19.webp?raw=true)
 
 ```
 mc get kayvan/play/moein/baroon.mp3 .
@@ -221,33 +221,33 @@ mc get kayvan/play/moein/baroon.mp3 .
 
 The mc get command downloads an object from a target S3 deployment to the local file system.
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/20.webp?raw=true)
 
 ```
 mc mv  b.mp3  kayvan/play/moein/2025/namaz.mp3
 ```
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/21.webp?raw=true)
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/22.webp?raw=true)
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
-
-
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
-
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
-
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/23.webp?raw=true)
 
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/24.webp?raw=true)
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/25.webp?raw=true)
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/26.webp?raw=true)
 
-![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/27.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/28.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/29.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/30.webp?raw=true)
 
 Thanks for your attention to this article. 🍹
 
