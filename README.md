@@ -108,3 +108,146 @@ docker logs minio_local
 ![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
 
 The command should return output similar to the following:
+```
+INFO: Formatting 1st pool, 1 set(s), 4 drives per set.
+INFO: WARNING: Host local has more than 2 drives of set. A host failure will result in data becoming unavailable.
+MinIO Object Storage Server
+Copyright: 2015-2024 MinIO, Inc.
+License: GNU AGPLv3 - https://www.gnu.org/licenses/agpl-3.0.html
+Version: RELEASE.2024-12-18T13-15-44Z (go1.23.4 linux/amd64)
+
+API: http://172.17.0.2:9000  http://127.0.0.1:9000 
+   RootUser: myminioadmin 
+   RootPass: minio-secret-key-change-me 
+
+WebUI: http://172.17.0.2:9001 http://127.0.0.1:9001  
+   RootUser: myminioadmin 
+   RootPass: minio-secret-key-change-me 
+
+CLI: https://min.io/docs/minio/linux/reference/minio-mc.html#quickstart
+   $ mc alias set 'myminio' 'http://172.17.0.2:9000' 'myminioadmin' 'minio-secret-key-change-me'
+
+Docs: https://docs.min.io
+INFO: Exiting on signal: TERMINATED
+MinIO Object Storage Server
+Copyright: 2015-2025 MinIO, Inc.
+License: GNU AGPLv3 - https://www.gnu.org/licenses/agpl-3.0.html
+Version: RELEASE.2024-12-18T13-15-44Z (go1.23.4 linux/amd64)
+
+API: http://172.17.0.2:9000  http://127.0.0.1:9000 
+   RootUser: myminioadmin 
+   RootPass: minio-secret-key-change-me 
+
+WebUI: http://172.17.0.2:9001 http://127.0.0.1:9001  
+   RootUser: myminioadmin 
+   RootPass: minio-secret-key-change-me 
+
+CLI: https://min.io/docs/minio/linux/reference/minio-mc.html#quickstart
+   $ mc alias set 'myminio' 'http://172.17.0.2:9000' 'myminioadmin' 'minio-secret-key-change-me'
+
+Docs: https://docs.min.io
+```
+
+5) Connect to the MinIO Service
+
+MinIO Web Console :
+
+You can access the MinIO Web Console by entering http://192.168.56.156:9001 in your preferred browser. Any traffic to the MinIO Console port on the local host redirects to the container.
+
+Log in with the MINIO_ROOT_USER and MINIO_ROOT_PASSWORD configured in the environment file specified to the container.
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+MinIO CLI (mc) :
+
+You can access the MinIO deployment over a Terminal or Shell using the MinIO Client (mc). See MinIO Client Installation Quickstart for instructions on installing mc.
+
+Create a new alias corresponding to the MinIO deployment. Use a hostname or IP address for your local machine along with the S3 API port 9000 to access the MinIO deployment. Any traffic to that port on the local host redirects to the container.
+
+```
+mc alias set kayvan http://192.168.56.156:9000 myminioadmin minio-secret-key-change-me
+```
+
+or via access key :
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+```
+mc alias set kayvan http://192.168.56.156:9000
+```
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+```
+mc alias ls
+```
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+You can then interact with the container using any mc command :
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+make a bucket named play to store your objects in it :
+```
+mc mb kayvan/play
+```
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+```
+mc od if=b.mp3 of=kayvan/play/moein/baroon.mp3 size=5MiB parts=3
+```
+
+The mc od command copies a local file to a remote location in a specified number of parts and part sizes :
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+```
+mc get kayvan/play/moein/baroon.mp3 .
+```
+
+The mc get command downloads an object from a target S3 deployment to the local file system.
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+```
+mc mv  b.mp3  kayvan/play/moein/2025/namaz.mp3
+```
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+![alt text](https://raw.githubusercontent.com/kayvansol/MinIO_Docker/refs/heads/main/img/.webp?raw=true)
+
+Thanks for your attention to this article. 🍹
+
